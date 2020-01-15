@@ -2,6 +2,23 @@
 
 This repository exists to allow you to recreate demos from the Building Containerized Applications on AWS course, found here: <a href="https://www.edx.org/course/building-containerized-applications-on-aws"> Building Containerized Applications on AWS </a>
 
+## PLEASE NOTE: 
+
+These demos were not built with free tier usage in mind, and therefore if you run them in your personal account you may or may not encounter charges. Build these proof of concepts in your account at your own risk.
+
+It is also worth noting that these demos were built on top of existing resources that you would need to create in your own account. These existing resources include:
+
+  - A VPC
+  - An Internet Gateway attached to that VPC
+  - Two public subnets across two AZs
+  - Routes allowing all internet traffic to flow from the subnets to the internet gateway
+  - A security group for a public facing ALB allowing all http traffic on port 80
+  - A security group for your containers allowing all http traffic on port 8080
+  - A Cloud9 Instance
+  - A DynamoDB Table named <code> blogs </code>
+  
+
+
 The repository includes two versions of a simple python "blog" app. The first version of the app is all static content and can be found under the path <code> aws-demos/building-containerized-applications-on-aws/pythonwebapp/docker-python-webapp-static/ </code> 
 
 The second version of the app is backed by a dynamodb table and can be found under the path <code> aws-demos/building-containerized-applications-on-aws/pythonwebapp/docker-python-webapp-dynamo/ </code>. In order for this code to work in your own account, you'll need to create a DynamoDB table called <code> blogs </code> as well as create an IAM Role that allows the code running in the container to use Role Based Access to read the DynamoDB table.
