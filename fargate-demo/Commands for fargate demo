@@ -1,0 +1,16 @@
+aws elbv2 create-load-balancer --name FargateDemoLoadBalancer --subnets <subnet id> <subnet id> --security-groups <security group id> --scheme internet-facing --type application --ip-address-type ipv4
+
+aws elbv2 create-target-group --name FargateTaskTargetGroup --protocol HTTP --port 8080 --vpc-id <vpc id> --target-type ip
+
+aws elbv2 create-listener --load-balancer-arn <load balancer arn> --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=<target group arn>
+
+aws ecs create-cluster --cluster-name fargate-cluster
+
+aws ecs register-task-definition --family python-web-app --task-role-arn <role arn> --execution-role-arn <role arn> --network-mode awsvpc --container-definitions file://fargate-container.json --cpu .5vCPU --memory 1GB --requires-compatibilities FARGATE
+
+aws ecs create-service --cluster <cluster arn> --service-name fargate-demo-service --task-definition <task definition arn> --load-balancers file://load-balancer.json --desired-count 2 --launch-type FARGATE --network-configuration file://task-networking.json --scheduling-strategy REPLICA --deployment-controller type=ECS  
+
+aws ecs list-services --cluster fargate-cluster
+
+aws ecs describe-services --cluster fargate-cluster --service fargate-demo-service
+

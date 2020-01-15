@@ -1,0 +1,7 @@
+[
+  {
+    "targetGroupArn": "<target group ARN>",
+    "containerName": "<container name>",
+    "containerPort": 8080
+  }
+]

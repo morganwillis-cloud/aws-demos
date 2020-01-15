@@ -1,0 +1,15 @@
+[
+    {
+        "environment": [], 
+        "name": "<name here>", 
+        "mountPoints": [], 
+        "image": "<URI for image from ECR>", 
+        "portMappings": [
+            {
+                "protocol": "tcp", 
+                "containerPort": 8080, 
+                "hostPort": 8080
+            }
+        ]
+    }
+]
