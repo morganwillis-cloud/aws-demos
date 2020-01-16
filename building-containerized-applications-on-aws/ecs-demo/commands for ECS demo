@@ -1,0 +1,21 @@
+aws ecs create-cluster --cluster-name ECS-Demo
+
+aws iam add-role-to-instance-profile --instance-profile-name webappserver --role-name <role name>
+
+aws ec2 run-instances --count 2 --image-id ami-0f161e6034a6262d8 --instance-type t2.micro --key-name <key pair name> --subnet-id <subnet id> --security-group-id <security group id> --iam-instance-profile Name=webappserver --associate-public-ip-address --user-data file://userdata.txt
+
+aws ecs register-task-definition --family python-app --task-role-arn <role arn> --execution-role-arn <role arn> --network-mode bridge --container-definitions file://container.json 
+
+aws ecs create-service --cluster <cluster arn> --service-name ECSDemoService --task-definition <task definition arn> --desired-count 2 --launch-type EC2 --scheduling-strategy REPLICA --deployment-controller type=ECS  
+
+aws ecs list-services --cluster ECS-Demo
+
+aws ecs describe-services --cluster ECS-Demo --service ECSDemoService8
+
+aws ecs list-tasks --cluster ECS-Demo --service-name ECSDemoService10
+
+aws ecs describe-tasks --cluster ECS-Demo --task <task arn>
+
+aws ecs describe-container-instances --cluster ECS-Demo --container-instances <container instance arn>
+
+aws ec2 describe-instances --instance-id <instance id>

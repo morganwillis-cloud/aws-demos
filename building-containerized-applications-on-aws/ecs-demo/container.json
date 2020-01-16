@@ -1,0 +1,16 @@
+[
+    {
+        "name": "<container name>", 
+        "cpu": 100,
+        "memory": 100,
+        "image": "<image URI>", 
+        "portMappings": [
+            {
+                "protocol": "tcp", 
+                "containerPort": 8080, 
+                "hostPort": 80
+            }
+        ],
+        "essential": true
+    }
+]
