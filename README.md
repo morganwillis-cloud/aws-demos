@@ -1,3 +1,14 @@
+Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except
+in compliance with the License. A copy of the License is located at
+
+https://aws.amazon.com/apache-2-0/
+
+or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
 # Building Containerized Applications on AWS Demos
 
 This repository exists to allow you to recreate demos from the Building Containerized Applications on AWS course, found here: <a href="https://www.edx.org/course/building-containerized-applications-on-aws"> Building Containerized Applications on AWS </a>
@@ -25,6 +36,4 @@ The repository includes two versions of a simple python "blog" app. The first ve
 
 The second version of the app is backed by a dynamodb table and can be found under the path <code> aws-demos/building-containerized-applications-on-aws/pythonwebapp/docker-python-webapp-dynamo/ </code>. In order for this code to work in your own account, you'll need to create a DynamoDB table called <code> blogs </code> as well as create an IAM Role that allows the code running in the container to use Role Based Access to read the DynamoDB table.
 
-[*version_1.0.0]
-
-©2020 Amazon Web Services, Inc. and its affiliates. All rights reserved. This work may not be reproduced or redistributed, in whole or in part, without prior written permission from Amazon Web Services, Inc. Commercial copying, lending, or selling is prohibited.
+The repository also includes two command line demos: <code> fargate-demo </code>, as well as a <code> ecs-demo </code>. Both of these demos were featured in the <a href="https://www.edx.org/course/building-containerized-applications-on-aws"> Building Containerized Applications on AWS </a> course on edX. You'll notice however, that there are many places you need to fill in the blank for these demos to work in your own account if you choose to try them. Anything that is surrounded by < carrots like this > need to be removed and filled in with your own information. These demos are to be used as reference material only.
