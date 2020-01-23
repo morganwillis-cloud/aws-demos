@@ -26,8 +26,3 @@ The repository includes two versions of a simple python "blog" app. The first ve
 The second version of the app is backed by a dynamodb table and can be found under the path <code> aws-demos/building-containerized-applications-on-aws/pythonwebapp/docker-python-webapp-dynamo/ </code>. In order for this code to work in your own account, you'll need to create a DynamoDB table called <code> blogs </code> as well as create an IAM Role that allows the code running in the container to use Role Based Access to read the DynamoDB table.
 
 The repository also includes two command line demos: <code> fargate-demo </code>, as well as a <code> ecs-demo </code>. Both of these demos were featured in the <a href="https://www.edx.org/course/building-containerized-applications-on-aws"> Building Containerized Applications on AWS </a> course on edX. You'll notice however, that there are many places you need to fill in the blank for these demos to work in your own account if you choose to try them. Anything that is surrounded by < carrots like this > need to be removed and filled in with your own information. These demos are to be used as reference material only.
-
-
-[*version_1.0.0]
-
-©2020 Amazon Web Services, Inc. and its affiliates. All rights reserved. This work may not be reproduced or redistributed, in whole or in part, without prior written permission from Amazon Web Services, Inc. Commercial copying, lending, or selling is prohibited.
